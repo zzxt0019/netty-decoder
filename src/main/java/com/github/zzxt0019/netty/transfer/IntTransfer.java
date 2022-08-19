@@ -40,6 +40,17 @@ public class IntTransfer extends Transfer<Integer> {
         return new IntTransfer(length, buf -> function.apply(buf) - num);
     }
 
+
+    /**
+     * 创建新对象, 放弃前waitLength个字节再转换
+     *
+     * @param waitLength 前面的字节数
+     * @return 新的IntTransfer
+     */
+    public IntTransfer wait(int waitLength) {
+        return new IntTransfer(length + waitLength, buf -> function.apply(buf.slice(waitLength, length)));
+    }
+
     /**
      * 普通地构建转换器
      *

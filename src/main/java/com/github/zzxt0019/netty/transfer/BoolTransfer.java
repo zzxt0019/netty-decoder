@@ -26,6 +26,17 @@ public class BoolTransfer extends Transfer<Boolean> {
         return new BoolTransfer(length, buf -> !function.apply(buf));
     }
 
+
+    /**
+     * 创建新对象, 放弃前waitLength个字节再转换
+     *
+     * @param waitLength 前面的字节数
+     * @return 新的IntTransfer
+     */
+    public BoolTransfer wait(int waitLength) {
+        return new BoolTransfer(length + waitLength, buf -> function.apply(buf.slice(waitLength, length)));
+    }
+
     /**
      * 普通地构建转换器
      *
