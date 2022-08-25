@@ -10,7 +10,7 @@
     <developers>
         <developer>
             <id>zzxt0019</id>
-            <email>hello_xp@outlook.com</email>
+            <email>zzxt0019@outlook.com</email>
             <timezone>UTC+8</timezone>
         </developer>
     </developers>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.77.Final</version>
+            <version>4.1.79.Final</version>
         </dependency>
     </dependencies>
 </project>
